@@ -11,3 +11,8 @@ pipeline:
       - cd /var/www/services/anime
       - git pull origin master # update to latest code
       - git push origin master
+      - npm install
+      - npm run build
+      - cd /var/www/services
+      - sudo docker stop roragok_anime
+      - sudo docker-compose up -d
