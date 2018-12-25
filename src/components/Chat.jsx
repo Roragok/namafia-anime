@@ -1,20 +1,15 @@
 import React from 'react';
-import ReactIframeResizer from 'react-iframe-resizer-super';
+import Iframe from 'react-iframe'
 
-const iframeOptions = {
-    checkOrigin: false,
-    log: true,
-    heightCalculationMethod: 'bodyScroll',
-}
-
-const Chat = ({options}) => {
+const Chat = ({height, visible, children}) => {
 
     return (
-        <ReactIframeResizer
-            iframeResizerOptions={iframeOptions}
-            iframeResizerEnable="true"
-            src="https://www.twitch.tv/embed/roragok/chat"
+        <Iframe
+            url="https://www.twitch.tv/embed/roragok/chat"
             id="chat_embed"
+            display="flex-inline"
+            position="relative"
+            height={height}
         />
     )
 };

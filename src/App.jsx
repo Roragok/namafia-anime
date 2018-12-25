@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.scss';
-import Player from './components/Player';
-import Chat from './components/Chat';
+import PlayerContainer from './containers/Player';
+import ChatContainer from './containers/Chat';
+import OptionsBar from './containers/Options'
+import {isMobile} from 'react-device-detect';
 
 class App extends Component {
+
+  state = {
+    hideChat: false,
+  }
+
   render() {
     return (
-      <div className="container">
-        <div className="stream-wrapper content">
-          <Player stream-actions="" />
-        </div>
-        <div className="chat-wrapper content">
-          <Chat/>
+      <div className="app-wrapper">
+        <OptionsBar
+          visible={!this.state.hideChat}
+          toggleVisibility={hideChat => this.setState({ hideChat })}
+        />
+        <div className="container">
+          <PlayerContainer isMobile getHeight={height => this.setState({ height })}/>
+          <ChatContainer
+            hidden = {this.state.hideChat}
+            height={isMobile ? "350px" : this.state.height}/>
         </div>
       </div>
     );
