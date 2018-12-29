@@ -6,7 +6,9 @@ export default {
         chat: 'https://www.twitch.tv/embed/roragok/chat',
     }
     // dan: {
-    //     type: 'twitch'
+    //     chatType: 'twitch'
+    //     streamType: 'twitch'
+    //       stream: 'https://player.twitch.tv/?channel=namafiadotcom'
 
     // }
 }

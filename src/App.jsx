@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import PlayerContainer from './containers/Player';
 import ChatContainer from './containers/Chat';
-import OptionsBar from './containers/Options'
-import {isMobile} from 'react-device-detect';
+import Navbar from './containers/Navbar'
+
 
 class App extends Component {
 
   state = {
-    hideChat: false,
+    showChat: true,
   }
 
   render() {
     return (
       <div className="app-wrapper">
-        <OptionsBar
-          visible={!this.state.hideChat}
-          toggleVisibility={hideChat => this.setState({ hideChat })}
+        <Navbar
+          visibleChat={this.state.showChat}
+          toggleChatVisibility={showChat => this.setState({ showChat })}
         />
         <div className="container">
-          <PlayerContainer isMobile getHeight={height => this.setState({ height })}/>
+          <PlayerContainer
+            setHeight={height => this.setState({ height })}
+           />
           <ChatContainer
-            hidden = {this.state.hideChat}
-            height={isMobile ? "350px" : this.state.height}/>
+            hidden={!this.state.showChat}
+            height={window.innerWidth < 820 ? "300px" : this.state.height}/>
         </div>
       </div>
     );
@@ -29,3 +31,4 @@ class App extends Component {
 }
 
 export default App;
+

@@ -9,7 +9,7 @@ const Chat = ({height, visible, children}) => {
             id="chat_embed"
             display="flex-inline"
             position="relative"
-            height={height}
+            height={height + "px"}
         />
     )
 };

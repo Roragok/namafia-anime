@@ -1,34 +1,24 @@
 import React from 'react';
 import Player from '../components/Player'
+import Measure from 'react-measure'
 
 class PlayerContainer extends React.Component {
-    refCallback = element => {
-        let height = null;
-        const dimensions = element.getBoundingClientRect()
-        if(element && typeof dimensions === "object" && dimensions.height) {
-            height = dimensions.height
-            if(dimensions.height)this.props.getHeight((JSON.stringify(height) + "px"))
-        }
-      };
-
     render(){
+        const setHeight = this.props.setHeight
         return (
-            <div ref={this.refCallback} className="stream-wrapper content">
-                <Player>
-                </Player>
-            </div>
+            <Measure
+            bounds
+            onResize={contentRect => {
+              setHeight(contentRect.bounds.height)
+            }}>
+                {({ measureRef }) => (
+                <div ref={measureRef} className="stream-wrapper iframe-wrapper">
+                    <Player>
+                    </Player>
+                </div>)}
+            </Measure>
         )
     }
-    // componentDidMount() {
-    //     if(!this.props.isMobile){
-    //         window.addEventListener("resize", this.refCallback);
-    //     }
-    // }
-    // componentWillUnmount() {
-    //     if(!this.props.isMobile){
-    //         window.addEventListener("resize", this.refCallback);
-    //     }
-    // }
 };
 
 export default PlayerContainer;

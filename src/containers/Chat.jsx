@@ -1,21 +1,15 @@
 import React from 'react';
 // import { CSSTransition } from 'react-transition-group'
 import Chat from '../components/Chat'
+import classNames from 'classnames'
 
 class ChatContainer extends React.Component {
-
-    state = {
-      height: this.props.height,
-      visible: !this.props.hidden,
-    }
-
-
-
     render(){
+      let chatClasses = classNames('chat-wrapper iframe-wrapper', {hidden: this.props.hidden})
       return(
-            <div className="chat-wrapper content">
+            <div className={chatClasses}>
               <Chat
-              height={this.state.height || this.props.height} />
+              height={this.props.height} />
             </div>
       )  
     }
