@@ -12,12 +12,8 @@ const Player = (props, ref) => {
                 url="https://stream.namafia.com/player.html"
                 height="100%"
                 id="player-embed"
-                name="restreamer-player"
-                scrolling="no"
-                frameborder="0"
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true"
-                allowfullscreen="true"
+                className="restreamer-player"
+                allowFullScreen
             />
         </div>
     )
