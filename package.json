@@ -6,7 +6,7 @@
     "classnames": "^2.2.6",
     "iframe-resizer": "^3.6.3",
     "memoize-one": "^5.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "react": "^16.6.3",
     "react-device-detect": "^1.6.1",
     "react-dom": "^16.6.3",
