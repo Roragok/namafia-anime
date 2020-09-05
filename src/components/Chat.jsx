@@ -5,7 +5,7 @@ const Chat = ({height, visible, children}) => {
 
     return (
         <Iframe
-            url="https://www.twitch.tv/embed/roragok/chat"
+            url="https://www.twitch.tv/embed/roragok/chat?parent=anime.namafia.com"
             id="chat_embed"
             display="flex-inline"
             position="relative"
