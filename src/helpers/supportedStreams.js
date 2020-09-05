@@ -3,7 +3,7 @@ export default {
         chatType: 'twitch',
         streamType: 'custom',
         stream: 'https://stream.namafia.com/player.html',
-        chat: 'https://www.twitch.tv/embed/roragok/chat',
+        chat: 'https://www.twitch.tv/embed/roragok/chat?player=anime.namafia.com',
     }
     // dan: {
     //     chatType: 'twitch'
